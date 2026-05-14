@@ -1,8 +1,8 @@
-name: "assert format_string('This format string is too long for input buffer %d\n1\n') == ([-1], 'r input buffer %d\n1\n')"
+name: "assert format_string('Num: %d\n42\n') == ('Num: 42', '')"
 limit: 2000
 memory_size: 0x1000
 memory_mapped_io:
-  0x80: [84, 104, 105, 115, 32, 102, 111, 114, 109, 97, 116, 32, 115, 116, 114, 105, 110, 103, 32, 105, 115, 32, 116, 111, 111, 32, 108, 111, 110, 103, 32, 102, 111, 114, 32, 105, 110, 112, 117, 116, 32, 98, 117, 102, 102, 101, 114, 32, 37, 100, 10, 49, 10]
+  0x80: [78, 117, 109, 58, 32, 37, 100, 10, 50, 49, 52, 55, 52, 56, 51, 54, 52, 55, 10]
   0x84: []
 reports:
   - name: Check results
