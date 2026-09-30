@@ -1,0 +1,28 @@
+name: "linear_filter"
+limit: 2000
+memory_size: 0x1000
+memory_mapped_io:
+  0x80: [3, 1, 2, 3]
+  0x84: []
+
+reports:
+  - name: trace
+    slice: all
+    view: |
+      {pc}: {instruction} {pc:label}
+
+  - name: result
+    slice: last
+    view: |
+      numio[0x80]: {io:0x80:dec}
+      numio[0x84]: {io:0x84:dec}
+    assert: |
+      numio[0x80]: [] >>> []
+      numio[0x84]: [] >>> [3, 8, 14]
+
+  - name: vliw-load
+    slice: last
+    view: |
+      vliw:load-percent:    {vliw:load-percent}
+      vliw:avg-load:        {vliw:avg-load}
+      vliw:bundles-by-load: {vliw:bundles-by-load}
