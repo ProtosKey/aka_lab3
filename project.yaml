@@ -1,0 +1,17 @@
+category: labs
+status: done
+name: aka_lab3
+
+description: >
+  Различные алгоритмы, реализованные на ассемблерах нескольких разных
+  архитектур: от аккумуляторной до VLIW.
+
+stack:
+  - acc32
+  - f32a
+  - m68k
+  - risc-iv
+  - vliw-iv
+
+possibilities:
+  - Сравнение ACC, CISC, RISC, STACK, VLIW-моделей на одинаковых задачах.
